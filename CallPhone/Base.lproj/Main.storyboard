@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="5Hu-p5-q7p" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="WrL-bC-B5c">
+                                        <rect key="frame" x="85" y="24" width="160" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="拨号"/>
+                                            <segment title="短信"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedAction:" destination="vXZ-lx-hvc" eventType="valueChanged" id="jlr-5g-eod"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eCf-A1-4gC" userLabel="全选">
+                                        <rect key="frame" x="277" y="25" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="全选">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="x4D-7f-zLM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfe-jh-2Ae">
+                                        <rect key="frame" x="16" y="26" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="退出">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exitAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vFf-d3-olJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.85632157840000001" blue="0.44951411159999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Cn8-oc-OxG" userLabel="bodyView">
+                                <rect key="frame" x="0.0" y="60" width="320" height="518"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="oJU-53-NYi" userLabel="callView" customClass="UIControl">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="QX2-ER-EIA" userLabel="searchView" customClass="UIControl">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="20" clearButtonMode="whileEditing" id="1Dq-62-Heq" userLabel="searchText">
+                                                        <rect key="frame" x="25" y="5" width="270" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                                        <connections>
+                                                            <action selector="searchTextEidtChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="IEt-2M-Zo8"/>
+                                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="p6L-65-BTm"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" id="fzW-Qa-KN5" userLabel="phoneTableView">
+                                                        <rect key="frame" x="25" y="35" width="270" height="170"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="separatorColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="VBo-aA-vNZ"/>
+                                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="Uke-W2-B7Y"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                                <connections>
+                                                    <action selector="viewClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="BhT-GW-hnf"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="klv-ga-xL4" userLabel="btnPanelView">
+                                                <rect key="frame" x="0.0" y="258" width="320" height="250"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BuU-dc-CPl" userLabel="kbOpButton">
+                                                <rect key="frame" x="200" y="230" width="110" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                <state key="normal" title="hide keyboard">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="keyOpClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ct1-1Y-Fvz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="rQQ-c8-2aV" userLabel="smsView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="518"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lUD-t7-Bva">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Iil-xZ-2C0"/>
+                                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="QlI-Am-Blr"/>
+                                                </connections>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MJe-0r-DeY">
+                                                <rect key="frame" x="8" y="459" width="305" height="38"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <state key="normal" title="发 送" backgroundImage="sendsms.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sendSmsAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="b3s-z4-arQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="7gk-n5-R4e" userLabel="charBtnView">
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bodyView" destination="Cn8-oc-OxG" id="2nW-Ac-nXf"/>
+                        <outlet property="btnPanelView" destination="klv-ga-xL4" id="iOF-hn-5sF"/>
+                        <outlet property="callView" destination="oJU-53-NYi" id="m0P-jR-rqe"/>
+                        <outlet property="charBtnView" destination="7gk-n5-R4e" id="fBd-qB-uEs"/>
+                        <outlet property="editButton" destination="eCf-A1-4gC" id="WOF-Mk-vH9"/>
+                        <outlet property="kbOpButton" destination="BuU-dc-CPl" id="m0w-H5-L8f"/>
+                        <outlet property="phoneTable" destination="fzW-Qa-KN5" id="vmX-Gz-W5o"/>
+                        <outlet property="searchText" destination="1Dq-62-Heq" id="YM8-yj-oiS"/>
+                        <outlet property="searchView" destination="QX2-ER-EIA" id="FgG-N8-vbD"/>
+                        <outlet property="smsContactsTable" destination="lUD-t7-Bva" id="LZs-su-fmw"/>
+                        <outlet property="smsView" destination="rQQ-c8-2aV" id="6FR-aM-pOr"/>
+                        <outlet property="topView" destination="5Hu-p5-q7p" id="bED-cQ-8JM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63" y="142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sendsms.png" width="250" height="58"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
